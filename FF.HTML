@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire - Curiosidades e Modos de Jogo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset de estilos padrões */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('https://i.imgur.com/Yw43bpZ.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #FF5722;
+        }
+
+        .menu {
+            margin-top: 20px;
+        }
+
+        .menu a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #FF5722;
+        }
+
+        .curiosidades {
+            margin-top: 30px;
+        }
+
+        .curiosidades button {
+            background-color: #FF5722;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 15px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .curiosidades button:hover {
+            background-color: #F44336;
+        }
+
+        .curiosidades p {
+            display: none;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        .linha-tempo {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .linha-tempo h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FF5722;
+        }
+
+        .timeline-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .timeline-line {
+            height: 5px;
+            background-color: #FF5722;
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 20px;
+        }
+
+        .timeline-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .timeline-item .year {
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #FF5722;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: #777;
+        }
+
+        footer a {
+            color: #FF5722;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Free Fire - Curiosidades e Modos de Jogo</h1>
+        <div class="menu">
+            <a href="#curiosidades">Modos de Jogo</a>
+            <a href="#linha-tempo">Linha do Tempo</a>
+            <a href="#footer">Contato</a>
+        </div>
+    </header>
+
+    <section id="curiosidades" class="curiosidades">
+        <h2>Escolha um Modo de Jogo</h2>
+        
+        <button onclick="mostrarModoJogo(1)">Battle Royale</button>
+        <button onclick="mostrarModoJogo(2)">Modo Rápido</button>
+        <button onclick="mostrarModoJogo(3)">Contra Squad</button>
+
+        <div id="modo-1" class="modo-jogo">
+            <p>O modo **Battle Royale** coloca 50 jogadores para lutar até a morte em uma área encolhendo. O último sobrevivente vence!</p>
+            <img src="imagens/battle-royale.jpg" alt="Battle Royale">
+        </div>
+        <div id="modo-2" class="modo-jogo">
+            <p>No **Modo Rápido**, partidas menores com apenas 4 jogadores acontecem em um mapa mais compacto, focando em ação instantânea.</p>
+            <img src="imagens/modo-rapido.jpg" alt="Modo Rápido">
+        </div>
+        <div id="modo-3" class="modo-jogo">
+            <p>**Contra Squad** é um modo onde duas equipes de 4 jogadores competem uma contra a outra. Cada rodada oferece um novo desafio e estratégias.</p>
+            <img src="imagens/contra-squad.jpg" alt="Contra Squad">
+        </div>
+
+    </section>
+
+    <section id="linha-tempo" class="linha-tempo">
+        <h2>A Evolução do Free Fire</h2>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <img src="imagens/linha-tempo-2017.jpg" alt="2017 - Lançamento">
+                <div class="year">2017</div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="imagens/linha-tempo-2018.jpg" alt="2018 - Novos Mapas">
+                <div class="year">2018</div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="imagens/linha-tempo-2020.jpg" alt="2020 - Expansão Global">
+                <div class="year">2020</div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="footer">
+        <p>Free Fire - Todos os direitos reservados</p>
+        <p>Desenvolvido por [EMANUAL] | <a href="https://www.garena.com" target="_blank">Garena</a></p>
+    </footer>
+
+    <script>
+        function mostrarModoJogo(id) {
+            // Esconde todos os modos de jogo
+            const modos = document.querySelectorAll('.modo-jogo');
+            modos.forEach(modo => modo.style.display = 'none');
+
+            // Exibe o modo de jogo selecionado
+            document.getElementById('modo-' + id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
